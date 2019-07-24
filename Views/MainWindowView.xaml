@@ -5,9 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CCApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <TextBox x:Name="Name" />
-        <Button x:Name="SayHello" Content="Click Me"/>
-    </StackPanel>
+        Title="MainWindow" Height="768" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        
+        <!-- MENU-->
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Printer"/>
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Calendar">
+            </MenuItem>
+            <Button Content="Edit"/>
+            <Button Content="Remove"/>
+            
+        </Menu>
+
+        <!-- CONTENT-->
+        <ContentControl Grid.Row="1"></ContentControl>
+
+        <!-- STATUS BAR-->
+        <StatusBar Grid.Row="2">
+            <TextBlock>Status: </TextBlock>
+        </StatusBar>
+
+    </Grid>
 </Window>
