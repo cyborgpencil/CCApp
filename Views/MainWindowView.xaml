@@ -19,7 +19,11 @@
                 <MenuItem Header="_Printer"/>
                 <MenuItem Header="_Exit"/>
             </MenuItem>
-            <MenuItem Header="_Calendar">
+            <MenuItem Header="_Home" x:Name="ShowHome">
+
+            </MenuItem>
+            <MenuItem Header="_Calendar" x:Name="ShowCalendar">
+                
             </MenuItem>
             <Button Content="Edit"/>
             <Button Content="Remove"/>
@@ -27,7 +31,7 @@
         </Menu>
 
         <!-- CONTENT-->
-        <ContentControl Grid.Row="1"></ContentControl>
+        <ContentControl Grid.Row="1" x:Name="ActiveItem"></ContentControl>
 
         <!-- STATUS BAR-->
         <StatusBar Grid.Row="2">

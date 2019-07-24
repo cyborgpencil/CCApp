@@ -3,28 +3,16 @@ using System.Windows;
 
 namespace CCApp.ViewModels
 {
-    public class MainWindowViewModel : PropertyChangedBase
+    public class MainWindowViewModel : Conductor<object>
     {
-        string name;
-        public string Name
+        public MainWindowViewModel()
         {
-            get { return name; }
-            set
-            {
-                name = value;
-                NotifyOfPropertyChange(() => Name);
-                NotifyOfPropertyChange(() => CanSayHello);
-            }
+            
         }
 
-        public bool CanSayHello
+        public void ShowCalendar()
         {
-            get { return !string.IsNullOrWhiteSpace(Name); }
-        }
-
-        public void SayHello()
-        {
-            MessageBox.Show($"Hello {Name}");
+            ActivateItem(new CalendarViewModel());
         }
     }
 

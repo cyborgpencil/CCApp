@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Margin="0,0,0,10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="93*"/>
+            <ColumnDefinition Width="93*"/> 
             <ColumnDefinition Width="101*"/>
             <ColumnDefinition Width="76*"/>
             <ColumnDefinition Width="89*"/>
@@ -25,6 +25,14 @@
             <RowDefinition Height="56*"/>
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
+        
+        <!--NAVIGATION START-->
+        <ComboBox Grid.Column="0" Grid.Row="0">
+            
+        </ComboBox>
 
+        <Button Content="EDIT" Grid.Column="1" Grid.Row="0"/>
+        <Button Content="CLEAR" Grid.Column="2" Grid.Row="0"/>
+        <!-- NAVIGATION END-->
     </Grid>
 </UserControl>
