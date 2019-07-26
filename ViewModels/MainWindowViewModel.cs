@@ -5,6 +5,10 @@ namespace CCApp.ViewModels
 {
     public class MainWindowViewModel : Conductor<object>
     {
+
+
+        
+
         public MainWindowViewModel()
         {
             
@@ -14,6 +18,13 @@ namespace CCApp.ViewModels
         {
             ActivateItem(new CalendarViewModel());
         }
+
+        public void ShowHome()
+        {
+            ActivateItem(new object());
+        }
+
+
     }
 
     

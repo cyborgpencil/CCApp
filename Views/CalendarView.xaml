@@ -3,36 +3,183 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:local="clr-namespace:CCApp.Views"
+             xmlns:cal="http://www.caliburnproject.org"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="0,0,0,10">
+             d:DesignHeight="450" d:DesignWidth="800" Background="Gray">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="93*"/> 
-            <ColumnDefinition Width="101*"/>
-            <ColumnDefinition Width="76*"/>
-            <ColumnDefinition Width="89*"/>
-            <ColumnDefinition Width="86*"/>
-            <ColumnDefinition Width="98*"/>
-            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="94*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="26*"/>
-            <RowDefinition Height="69*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="39*"/>
             <RowDefinition Height="58*"/>
             <RowDefinition Height="73*"/>
             <RowDefinition Height="68*"/>
             <RowDefinition Height="56*"/>
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
-        
-        <!--NAVIGATION START-->
-        <ComboBox Grid.Column="0" Grid.Row="0">
-            
-        </ComboBox>
 
-        <Button Content="EDIT" Grid.Column="1" Grid.Row="0"/>
-        <Button Content="CLEAR" Grid.Column="2" Grid.Row="0"/>
+        <!--NAVIGATION START-->
+        <DatePicker Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Text="1/1/2019" Grid.Column="2" Grid.Row="1"/>
+        <TextBlock Text="1/1/2019" Grid.Column="3" Grid.Row="1"/>
+        <TextBlock Text="1/1/2019" Grid.Column="4" Grid.Row="1"/>
+        <TextBlock Text="1/1/2019" Grid.Column="5" Grid.Row="1"/>
+        <TextBlock Text="1/1/2019" Grid.Column="6" Grid.Row="1"/>
+        <TextBlock Text="1/1/2019" Grid.Column="7" Grid.Row="1"/>
+
+        <Button IsEnabled="{Binding Path=EditEnable, Mode=TwoWay}" Content="EDIT" Grid.Column="2" Grid.Row="0"/>
+        <Button Content="CLEAR" Grid.Column="3" Grid.Row="0"/>
         <!-- NAVIGATION END-->
+
+        <!-- TOP LABELS START-->
+        <TextBlock Text="SUNDAY"  Grid.Column="1" Grid.Row="2"/>
+        <TextBlock Text="MONDAY" Grid.Column="2" Grid.Row="2"/>
+        <TextBlock Text="TUESDAY" Grid.Column="3" Grid.Row="2"/>
+        <TextBlock Text="WEDNESDAY" Grid.Column="4" Grid.Row="2"/>
+        <TextBlock Text="THURDAY" Grid.Column="5" Grid.Row="2"/>
+        <TextBlock Text="FRIDAY" Grid.Column="6" Grid.Row="2"/>
+        <TextBlock Text="SATURDAY" Grid.Column="7" Grid.Row="2"/>
+        <!-- TOP LABELS END-->
+
+        <!--SIDE LABELS START-->
+        <TextBlock Text="BREAKFAST" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="MORNING SNACK" Grid.Column="0" Grid.Row="4"/>
+        <TextBlock Text="LUNCH" Grid.Column="0" Grid.Row="5"/>
+        <TextBlock Text="EVENING SNACK" Grid.Column="0" Grid.Row="6"/>
+        <TextBlock Text="DINNER" Grid.Column="0" Grid.Row="7"/>
+        <!--SIDE LABELS END-->
+
+        <!--SUNDAY FOOD LIST-->
+        <Button x:Name="Sun_Bf" Grid.Column="1" Grid.Row="3" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Sun_MS" Grid.Column="1" Grid.Row="4" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Sun_L" Grid.Column="1" Grid.Row="5" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Sun_ES" Grid.Column="1" Grid.Row="6" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Sun_BD" Grid.Column="1" Grid.Row="7" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+
+        <!--MONDAY FOOD LIST-->
+        <Button x:Name="Mon_Bf" Grid.Column="2" Grid.Row="3" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Mon_MS" Grid.Column="2" Grid.Row="4" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Mon_L" Grid.Column="2" Grid.Row="5" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Mon_ES" Grid.Column="2" Grid.Row="6" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Mon_BD" Grid.Column="2" Grid.Row="7" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+
+        <!--TUESDAY FOOD LIST-->
+        <Button x:Name="Tues_Bf" Grid.Column="3" Grid.Row="3" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Tues_MS" Grid.Column="3" Grid.Row="4" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Tues_L" Grid.Column="3" Grid.Row="5" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Tues_ES" Grid.Column="3" Grid.Row="6" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Tues_BD" Grid.Column="3" Grid.Row="7" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+
+        <!--WDNESDAY FOOD LIST-->
+        <Button x:Name="Wed_Bf" Grid.Column="4" Grid.Row="3" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Wed_MS" Grid.Column="4" Grid.Row="4" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Wed_L" Grid.Column="4" Grid.Row="5" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Wed_ES" Grid.Column="4" Grid.Row="6" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Wed_BD" Grid.Column="4" Grid.Row="7" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+
+        <!--THURSDAY FOOD LIST-->
+        <Button x:Name="Thu_Bf" Grid.Column="5" Grid.Row="3" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Thu_MS" Grid.Column="5" Grid.Row="4" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Thu_L" Grid.Column="5" Grid.Row="5" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Thu_ES" Grid.Column="5" Grid.Row="6" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Thu_BD" Grid.Column="5" Grid.Row="7" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+
+        <!--FRIDAY FOOD LIST-->
+        <Button x:Name="Fri_Bf" Grid.Column="6" Grid.Row="3" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Fri_MS" Grid.Column="6" Grid.Row="4" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Fri_L" Grid.Column="6" Grid.Row="5" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Fri_ES" Grid.Column="6" Grid.Row="6" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Fri_BD" Grid.Column="6" Grid.Row="7" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+
+        <!--SATURDAY FOOD LIST-->
+        <Button x:Name="Sat_Bf" Grid.Column="7" Grid.Row="3" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Sat_MS" Grid.Column="7" Grid.Row="4" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Sat_L" Grid.Column="7" Grid.Row="5" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Sat_ES" Grid.Column="7" Grid.Row="6" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+        <Button x:Name="Sat_BD" Grid.Column="7" Grid.Row="7" >
+            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+        </Button>
+
+
     </Grid>
 </UserControl>

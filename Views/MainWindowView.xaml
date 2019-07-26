@@ -25,8 +25,7 @@
             <MenuItem Header="_Calendar" x:Name="ShowCalendar">
                 
             </MenuItem>
-            <Button Content="Edit"/>
-            <Button Content="Remove"/>
+            
             
         </Menu>
 
