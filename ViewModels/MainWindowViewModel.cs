@@ -16,7 +16,11 @@ namespace CCApp.ViewModels
 
         public void ShowCalendar()
         {
-            ActivateItem(new CalendarViewModel());
+
+            // debug*
+            ActivateItem(new CalendarPrintViewModel());
+
+           // ActivateItem(new CalendarViewModel());
         }
 
         public void ShowHome()
