@@ -33,6 +33,7 @@ namespace CCApp.ViewModels
           
         }
 
+        // Enabled 
         public void Sun_Bf()
         {
             // enable Edit button

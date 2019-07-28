@@ -16,18 +16,18 @@
         <!-- MENU-->
         <Menu Grid.Row="0">
             <MenuItem Header="_File">
-                <MenuItem Header="_Printer"/>
-                <MenuItem Header="_Exit"/>
+                <MenuItem Header="CompanyInfo" x:Name="EditCompany"/>
+                <MenuItem Header="_Print" x:Name="Print"/>
+                <MenuItem Header="_Exit" x:Name="ExitApp"/>
             </MenuItem>
             <MenuItem Header="_Home" x:Name="ShowHome">
 
             </MenuItem>
             <MenuItem Header="_Calendar" x:Name="ShowCalendar">
-                
+
             </MenuItem>
-            
-            
         </Menu>
+        
 
         <!-- CONTENT-->
         <ContentControl Grid.Row="1" x:Name="ActiveItem"></ContentControl>

@@ -33,10 +33,7 @@
         <!-- COMPANY NAME END-->
         
         <!--PRINTER START-->
-        <ComboBox Grid.Column="0" Grid.Row="0" SelectedIndex="0">
-            <TextBlock Text="HP Printer"/>
-            <TextBlock Text="Adobe PDF"/>
-        </ComboBox>
+        <ComboBox ItemsSource="{Binding Path=PrinterList}" SelectedIndex="{Binding Path=SelectedPrinter}"/>
 
         <Button Content="PRINT" Grid.Column="0" Grid.Row="1"/>
         <!--PTINTER END-->

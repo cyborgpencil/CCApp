@@ -93,6 +93,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Models\MenuDate.cs" />
     <Compile Include="Models\MenuWeek.cs" />
     <Compile Include="ViewModels\CalendarPrintViewModel.cs" />
     <Compile Include="ViewModels\CalendarViewModel.cs" />
@@ -139,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\PrintingLib\PrintingLib.csproj">
+      <Project>{527addd5-f782-4276-9efe-3890dd1b34a9}</Project>
+      <Name>PrintingLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,6 @@ namespace CCApp.Models
         public DateTime SundayStartDate { get; set; }
 
         // Menu days have the list of food for meal time
-        public List< Dictionary<string, List<string>> > MenuDay { get; set; }
+        public MenuDate MenuDates { get; set; }
     }
 }
