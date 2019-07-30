@@ -1,12 +1,14 @@
 ﻿using Caliburn.Micro;
+using CCApp.Views;
 using PrintingLib;
 using System.Collections.ObjectModel;
+using System.Windows.Documents;
 
 namespace CCApp.ViewModels
 {
     public class CalendarPrintViewModel : Screen
     {
-        PrintingLib.PrintingLib printlib;
+        private PrintingLib.PrintingLib printlib;
         string defaultPrinter;
 
         int selectedPrinter;
@@ -28,19 +30,21 @@ namespace CCApp.ViewModels
             printlib = new PrintingLib.PrintingLib();
             defaultPrinter = printlib.GetDefaultPrinter();
 
+            // Set Installed Printers
             foreach (var printer in printlib.GetListOfPrinters())
             {
                 PrinterList.Add(printer);
             }
 
-            for (int i = 0; i < PrinterList.Count; i++)
-            {
-                if(PrinterList[i] == defaultPrinter)
-                {
-                    selectedPrinter = i;
-                }
-            }
-            
+            // Set Default Printer to selected
+            SelectedPrinter = printlib.GetDefaultPrinterIndex();
+        }
+
+        public void Print()
+        {
+            CalendarPrintOnlyView testVidual = new CalendarPrintOnlyView();
+
+            printlib.Print(testVidual, "Calendar for Child App");
         }
     }
 }

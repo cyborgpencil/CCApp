@@ -6,6 +6,14 @@ namespace CCApp
 {
     public class Bootstrapper : BootstrapperBase
     {
+        private readonly SimpleContainer _container = new SimpleContainer();
+
+        protected override void Configure()
+        {
+            // Add Event Aggregator
+            _container.Singleton<IEventAggregator, EventAggregator>();
+        }
+
         public Bootstrapper()
         {
             Initialize();

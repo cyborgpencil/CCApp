@@ -76,6 +76,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\CalendarPrintOnlyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CalendarPrintView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -93,11 +97,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Models\MenuDate.cs" />
+    <Compile Include="Models\MealDay.cs" />
     <Compile Include="Models\MenuWeek.cs" />
     <Compile Include="ViewModels\CalendarPrintViewModel.cs" />
     <Compile Include="ViewModels\CalendarViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\CalendarPrintOnlyView.xaml.cs">
+      <DependentUpon>CalendarPrintOnlyView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CalendarPrintView.xaml.cs">
       <DependentUpon>CalendarPrintView.xaml</DependentUpon>
     </Compile>

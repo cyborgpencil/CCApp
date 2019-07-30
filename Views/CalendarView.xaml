@@ -31,7 +31,7 @@
         </Grid.RowDefinitions>
 
         <!--NAVIGATION START-->
-        <DatePicker Grid.Column="1" Grid.Row="1"/>
+        <DatePicker Grid.Column="1" Grid.Row="1" x:Name="CalendarWeekSunday"/>
         <TextBlock Text="1/1/2019" Grid.Column="2" Grid.Row="1"/>
         <TextBlock Text="1/1/2019" Grid.Column="3" Grid.Row="1"/>
         <TextBlock Text="1/1/2019" Grid.Column="4" Grid.Row="1"/>
@@ -64,7 +64,7 @@
 
         <!--SUNDAY FOOD LIST-->
         <Button x:Name="Sun_Bf" Grid.Column="1" Grid.Row="3" >
-            <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding Sun_BF_Text}" TextWrapping="Wrap"/>
         </Button>
         <Button x:Name="Sun_MS" Grid.Column="1" Grid.Row="4" >
             <TextBlock Text="Apple Juice, Pancake" TextWrapping="Wrap"/>

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CCApp.Models
 {
-    public class MenuDate
+    public class MealDay
     {
+        public int ID { get; set; }
         public string[] MealTimes { get; set; }
         public DateTime Date { get; set; }
     }
