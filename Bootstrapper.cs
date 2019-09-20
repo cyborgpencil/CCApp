@@ -23,5 +23,7 @@ namespace CCApp
         {
             DisplayRootViewFor<MainWindowViewModel>();
         }
+
+        
     }
 }

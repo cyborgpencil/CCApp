@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
-using CCApp.Models;
-using System.Windows;
+using CCApp.Data;
+using System.Linq;
+using System.Diagnostics;
 
 namespace CCApp.ViewModels
 {
@@ -25,7 +26,7 @@ namespace CCApp.ViewModels
 
         public void EditCompany()
         {
-
+            ActivateItem(new CompanyViewModel());
         }
 
         public void Print()
@@ -49,5 +50,5 @@ namespace CCApp.ViewModels
         }
     }
 
-    
+
 }
