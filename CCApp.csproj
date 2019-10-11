@@ -320,9 +320,6 @@
       <DependentUpon>CCAppModel.edmx</DependentUpon>
       <LastGenOutput>CCAppModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Data\sqlite3.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

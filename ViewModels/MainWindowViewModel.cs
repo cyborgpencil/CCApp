@@ -2,6 +2,7 @@
 using CCApp.Data;
 using System.Linq;
 using System.Diagnostics;
+using System.Windows;
 
 namespace CCApp.ViewModels
 {
@@ -46,7 +47,7 @@ namespace CCApp.ViewModels
 
         public void ExitApp()
         {
-
+            Application.Current.Shutdown();
         }
     }
 
