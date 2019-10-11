@@ -7,6 +7,27 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
-        <TextBlock x:Name="CompanyName"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Company Name: "/>
+            <TextBox x:Name="CompanyName" Width="100px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Company Address: "/>
+            <TextBox Width="100px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Company Email: "/>
+            <TextBox Width="100px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Company Phone: "/>
+            <TextBox Width="100px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Logo: "/>
+            <TextBox Width="100px"/>
+            <Button Content="Browse"/>
+            <Button Content="Update"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>
