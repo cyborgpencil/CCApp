@@ -21,6 +21,7 @@ namespace CCApp.ViewModels
             Company company = new Company();
             using (var context = new CCAppEntities())
             {
+                context.Database.Connection.Open();
                 company = context.Company.FirstOrDefault<Company>();
             }
 
