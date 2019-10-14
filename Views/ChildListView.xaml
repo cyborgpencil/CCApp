@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="CCApp.Views.ChildListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CCApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    <StackPanel>
+        <TextBlock Text="Children List:"/>
+        <ListBox Height="200" Margin="10,0,703,0">
+            <TextBlock Text="Test Child1"/>
+            <TextBlock Text="Test Child2"/>
+            <TextBlock Text="Test Child3"/>
+            <TextBlock Text="Test Child4"/>
+            <TextBlock Text="Test Child5"/>
+
+        </ListBox>
+    </StackPanel>
+</UserControl>

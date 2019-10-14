@@ -45,6 +45,11 @@ namespace CCApp.ViewModels
             }
         }
 
+        public void ShowChildren()
+        {
+            ActivateItem(new ChildMainViewModel());
+        }
+
         public void ExitApp()
         {
             Application.Current.Shutdown();

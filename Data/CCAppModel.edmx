@@ -11,6 +11,10 @@
           </Key>
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="CompanyAddress" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="CompanyEmail" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="CompanyPhone" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="CompanyOwner" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityContainer Name="DataCCAppModelStoreContainer">
           <EntitySet Name="Company" EntityType="Self.Company" store:Type="Tables" />
@@ -25,6 +29,10 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" />
           <Property Name="CompanyName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyAddress" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyEmail" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyPhone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyOwner" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="CCAppEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Company" EntityType="Self.Company" />
@@ -38,6 +46,10 @@
           <EntitySetMapping Name="Company">
             <EntityTypeMapping TypeName="Data.CCAppModel.Company">
               <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="CompanyOwner" ColumnName="CompanyOwner" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
               </MappingFragment>

@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace CCApp.Views
 {
     /// <summary>
-    /// Interaction logic for CompanyView.xaml
+    /// Interaction logic for ChildMainView.xaml
     /// </summary>
-    public partial class CompanyView : UserControl
+    public partial class ChildMainView : UserControl
     {
-        public CompanyView()
+        public ChildMainView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

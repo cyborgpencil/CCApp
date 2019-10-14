@@ -13,15 +13,19 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Company Address: "/>
-            <TextBox Width="100px"/>
+            <TextBox x:Name="CompanyAddress" Width="100px"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Company Email: "/>
-            <TextBox Width="100px"/>
+            <TextBox x:Name="CompanyEmail" Width="100px"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Company Phone: "/>
-            <TextBox Width="100px"/>
+            <TextBox x:Name="CompanyPhone" Width="100px"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Company Owner: "/>
+            <TextBox x:Name="CompanyOwner" Width="100px"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Logo: "/>
@@ -29,5 +33,6 @@
             <Button Content="Browse"/>
             <Button Content="Update"/>
         </StackPanel>
+        <Button x:Name="Save" Content="Save" Width="100"/>
     </StackPanel>
 </UserControl>
