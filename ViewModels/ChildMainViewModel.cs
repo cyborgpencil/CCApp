@@ -13,6 +13,7 @@ namespace CCApp.ViewModels
     {
         public string ChildSelectedItem { get; set; }
         public ObservableCollection<Child> Children { get; set; }
+        public ObservableCollection<Child> ChildList { get; set; }
         public ChildMainViewModel()
         {
             // Load Children
