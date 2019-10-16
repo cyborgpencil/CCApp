@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Data.CCAppModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=D:\APPs\CCApp\Data\CCApp.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Child">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="ChildFirstName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ChildMiddleName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ChildLast" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ChildBirthDate" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
         <EntityType Name="Company">
           <Key>
             <PropertyRef Name="Id" />
@@ -17,6 +27,7 @@
           <Property Name="CompanyOwner" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityContainer Name="DataCCAppModelStoreContainer">
+          <EntitySet Name="Child" EntityType="Self.Child" store:Type="Tables" />
           <EntitySet Name="Company" EntityType="Self.Company" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -36,7 +47,18 @@
         </EntityType>
         <EntityContainer Name="CCAppEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Company" EntityType="Self.Company" />
+          <EntitySet Name="Child" EntityType="Data.CCAppModel.Child" />
         </EntityContainer>
+        <EntityType Name="Child">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="ChildFirstName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ChildMiddleName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ChildLast" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ChildBirthDate" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -52,6 +74,17 @@
                 <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Child">
+            <EntityTypeMapping TypeName="Data.CCAppModel.Child">
+              <MappingFragment StoreEntitySet="Child">
+                <ScalarProperty Name="ChildBirthDate" ColumnName="ChildBirthDate" />
+                <ScalarProperty Name="ChildLast" ColumnName="ChildLast" />
+                <ScalarProperty Name="ChildMiddleName" ColumnName="ChildMiddleName" />
+                <ScalarProperty Name="ChildFirstName" ColumnName="ChildFirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

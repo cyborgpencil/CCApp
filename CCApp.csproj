@@ -204,6 +204,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ChildCreateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ChildListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -240,6 +248,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CCAppModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Data\Child.cs">
+      <DependentUpon>CCAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Company.cs">
       <DependentUpon>CCAppModel.tt</DependentUpon>
     </Compile>
@@ -247,6 +258,7 @@
     <Compile Include="Models\MenuWeek.cs" />
     <Compile Include="ViewModels\CalendarPrintViewModel.cs" />
     <Compile Include="ViewModels\CalendarViewModel.cs" />
+    <Compile Include="ViewModels\ChildCreateViewModel.cs" />
     <Compile Include="ViewModels\ChildListViewModel.cs" />
     <Compile Include="ViewModels\ChildMainViewModel.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
@@ -259,6 +271,12 @@
     </Compile>
     <Compile Include="Views\CalendarView.xaml.cs">
       <DependentUpon>CalendarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildCreateView.xaml.cs">
+      <DependentUpon>ChildCreateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildInfoView.xaml.cs">
+      <DependentUpon>ChildInfoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildListView.xaml.cs">
       <DependentUpon>ChildListView.xaml</DependentUpon>

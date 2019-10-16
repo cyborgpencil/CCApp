@@ -26,5 +26,6 @@ namespace CCApp.Data
         }
     
         public virtual DbSet<Company> Company { get; set; }
+        public virtual DbSet<Child> Child { get; set; }
     }
 }
