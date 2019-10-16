@@ -13,10 +13,11 @@ namespace CCApp.ViewModels
     {
         public string ChildSelectedItem { get; set; }
         public ObservableCollection<Child> Children { get; set; }
-        public ObservableCollection<Child> ChildList { get; set; }
+        public ObservableCollection<string> ChildList { get; set; }
         public ChildMainViewModel()
         {
             // Load Children
+            LoadChildList();
 
             ShowHome();
         }
@@ -33,6 +34,37 @@ namespace CCApp.ViewModels
         public void ShowCreateChild()
         {
             ActivateItem(new ChildCreateViewModel());
+        }
+
+        public void LoadChildList()
+        {
+            // check for any children in database
+            List<string> children = LoadChildrenFromDB();
+            ChildList = new ObservableCollection<string>(children);
+        }
+
+        private List<string> LoadChildrenFromDB()
+        {
+            // open database
+            List<string> childrenList = new List<string>();
+
+
+            using (var context = new CCAppEntities())
+            {
+                
+
+                if (context.Child.Count() != 0)
+                {
+                    var children = context.Child.ToList<Child>();
+
+                    foreach (var c in children)
+                    {
+                        childrenList.Add($"{c.ChildFirstName} {c.ChildMiddleName} {c.ChildLastName}");
+                    }
+                }
+            }
+
+            return childrenList;
         }
     }
 }

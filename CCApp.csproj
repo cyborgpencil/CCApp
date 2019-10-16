@@ -315,13 +315,13 @@
     </EmbeddedResource>
     <None Include="CCApp_1_TemporaryKey.pfx" />
     <None Include="CCApp_TemporaryKey.pfx" />
+    <Content Include="Data\CCApp.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EntityDeploy Include="Data\CCAppModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CCAppModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Data\CCApp.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Data\CCAppModel.edmx.diagram">
       <DependentUpon>CCAppModel.edmx</DependentUpon>
     </None>

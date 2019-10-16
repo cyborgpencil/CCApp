@@ -17,7 +17,7 @@ namespace CCApp.Data
         public long Id { get; set; }
         public string ChildFirstName { get; set; }
         public string ChildMiddleName { get; set; }
-        public string ChildLast { get; set; }
+        public string ChildLastName { get; set; }
         public string ChildBirthDate { get; set; }
     }
 }

@@ -32,16 +32,16 @@ namespace CCApp.ViewModels
                     context.Database.Connection.Open();
 
                     // CRUD
-                    context.Child.Add(new Child { ChildFirstName = ChildFirstName, ChildMiddleName = ChildMiddleName, ChildLast = ChildLastName,
+                    context.Child.Add(new Child { ChildFirstName = ChildFirstName, ChildMiddleName = ChildMiddleName, ChildLastName = ChildLastName,
                     ChildBirthDate = ChildBirthDate});
                     // save child to db
                     context.SaveChanges();
-                    
+                    ClearChildInfo();
                 }
 
 
             }
-            ClearChildInfo();
+            
         }
 
         public bool VerifyChildInfo()

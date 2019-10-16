@@ -24,14 +24,8 @@
             <MenuItem Header="_Copy">
 
             </MenuItem>
-            
-            <ComboBox Width="140" SelectedItem="{Binding Path=ChildSelectedItem}" ItemsSource="{Binding Path=ChildList}">
-                
-                <TextBlock Text="Child Test1"/>
-                <TextBlock Text="Child Test1"/>
-                <TextBlock Text="Child Test1"/>
 
-            </ComboBox>
+            <ComboBox Width="140" SelectedItem="{Binding Path=ChildSelectedItem}" ItemsSource="{Binding Path=ChildList}"/>
         </Menu>
         
         <!--CONTENT-->

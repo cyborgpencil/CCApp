@@ -4,15 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Data.CCAppModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=D:\APPs\CCApp\Data\CCApp.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="mainModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="Data Source=D:\Apps\CCApp\Data\CCApp.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Child">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ChildFirstName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-          <Property Name="ChildMiddleName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-          <Property Name="ChildLast" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ChildMiddleName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="ChildLastName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
           <Property Name="ChildBirthDate" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
         </EntityType>
         <EntityType Name="Company">
@@ -26,19 +26,29 @@
           <Property Name="CompanyPhone" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="CompanyOwner" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
-        <EntityContainer Name="DataCCAppModelStoreContainer">
+        <EntityContainer Name="mainModelStoreContainer">
           <EntitySet Name="Child" EntityType="Self.Child" store:Type="Tables" />
           <EntitySet Name="Company" EntityType="Self.Company" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Data.CCAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="mainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Child">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChildFirstName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ChildMiddleName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ChildLastName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ChildBirthDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="Company">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CompanyName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CompanyAddress" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="CompanyEmail" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
@@ -46,45 +56,35 @@
           <Property Name="CompanyOwner" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="CCAppEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Company" EntityType="Self.Company" />
-          <EntitySet Name="Child" EntityType="Data.CCAppModel.Child" />
+          <EntitySet Name="Children" EntityType="Self.Child" />
+          <EntitySet Name="Companies" EntityType="Self.Company" />
         </EntityContainer>
-        <EntityType Name="Child">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" />
-          <Property Name="ChildFirstName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="ChildMiddleName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="ChildLast" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="ChildBirthDate" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DataCCAppModelStoreContainer" CdmEntityContainer="CCAppEntities">
-          <EntitySetMapping Name="Company">
-            <EntityTypeMapping TypeName="Data.CCAppModel.Company">
-              <MappingFragment StoreEntitySet="Company">
-                <ScalarProperty Name="CompanyOwner" ColumnName="CompanyOwner" />
-                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
-                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
-                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+        <EntityContainerMapping StorageEntityContainer="mainModelStoreContainer" CdmEntityContainer="CCAppEntities">
+          <EntitySetMapping Name="Children">
+            <EntityTypeMapping TypeName="mainModel.Child">
+              <MappingFragment StoreEntitySet="Child">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="ChildFirstName" ColumnName="ChildFirstName" />
+                <ScalarProperty Name="ChildMiddleName" ColumnName="ChildMiddleName" />
+                <ScalarProperty Name="ChildLastName" ColumnName="ChildLastName" />
+                <ScalarProperty Name="ChildBirthDate" ColumnName="ChildBirthDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Child">
-            <EntityTypeMapping TypeName="Data.CCAppModel.Child">
-              <MappingFragment StoreEntitySet="Child">
-                <ScalarProperty Name="ChildBirthDate" ColumnName="ChildBirthDate" />
-                <ScalarProperty Name="ChildLast" ColumnName="ChildLast" />
-                <ScalarProperty Name="ChildMiddleName" ColumnName="ChildMiddleName" />
-                <ScalarProperty Name="ChildFirstName" ColumnName="ChildFirstName" />
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="mainModel.Company">
+              <MappingFragment StoreEntitySet="Company">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="CompanyEmail" ColumnName="CompanyEmail" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyOwner" ColumnName="CompanyOwner" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -102,7 +102,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

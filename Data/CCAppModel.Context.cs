@@ -25,7 +25,7 @@ namespace CCApp.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Company> Company { get; set; }
         public virtual DbSet<Child> Child { get; set; }
+        public virtual DbSet<Company> Company { get; set; }
     }
 }
