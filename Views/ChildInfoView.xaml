@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
     <TabControl>
-        <TabItem Header="General">
-            <ContentControl x:Name="GeneralInfo"/>
+        <TabItem Header="Info" x:Name="ShowChildDemographics">
+            <ContentControl x:Name="ActiveItem"/>
         </TabItem>
         <TabItem Header="Parent/Guardian"/>
         <TabItem Header="Emergency Contacts"/>

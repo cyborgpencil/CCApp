@@ -195,6 +195,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\ShellView.xaml.cs">
+      <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\CalendarPrintOnlyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -208,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ChildCreateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildDemograhicsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,6 +269,8 @@
     <Compile Include="ViewModels\CalendarPrintViewModel.cs" />
     <Compile Include="ViewModels\CalendarViewModel.cs" />
     <Compile Include="ViewModels\ChildCreateViewModel.cs" />
+    <Compile Include="ViewModels\ChildDemograhicsViewModel.cs" />
+    <Compile Include="ViewModels\ChildInfoViewModel.cs" />
     <Compile Include="ViewModels\ChildListViewModel.cs" />
     <Compile Include="ViewModels\ChildMainViewModel.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
@@ -277,6 +286,9 @@
     </Compile>
     <Compile Include="Views\ChildCreateView.xaml.cs">
       <DependentUpon>ChildCreateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildDemograhicsView.xaml.cs">
+      <DependentUpon>ChildDemograhicsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildInfoView.xaml.cs">
       <DependentUpon>ChildInfoView.xaml</DependentUpon>
@@ -294,6 +306,10 @@
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

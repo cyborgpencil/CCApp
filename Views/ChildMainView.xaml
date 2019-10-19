@@ -25,7 +25,7 @@
 
             </MenuItem>
 
-            <ComboBox Width="140" SelectedItem="{Binding Path=ChildSelectedItem}" ItemsSource="{Binding Path=ChildList}"/>
+            <ComboBox x:Name="ShowSelectedChild" Width="140" SelectedItem="{Binding Path=ChildSelectedItem}" ItemsSource="{Binding Path=ChildList}" SelectedValue="{Binding Path=SelectedChild}"/>
         </Menu>
         
         <!--CONTENT-->
