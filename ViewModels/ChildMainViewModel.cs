@@ -16,7 +16,8 @@ namespace CCApp.ViewModels
         public string ChildSelectedItem { get; set; }
         public ObservableCollection<Child> Children { get; set; }
         public ObservableCollection<string> ChildList { get; set; }
-        public string SelectedChild { get; set; }
+        public Child SelectedChild { get; set; }
+        public string ChildFN { get; set; }
 
         public ChildMainViewModel()
         {
@@ -44,14 +45,14 @@ namespace CCApp.ViewModels
         public void LoadChildList()
         {
             // check for any children in database
-            List<string> children = LoadChildrenFromDB();
-            ChildList = new ObservableCollection<string>(children);
+            List<Child> children = LoadChildrenFromDB();
+            Children = new ObservableCollection<Child>(children);
         }
 
-        private List<string> LoadChildrenFromDB()
+        private List<Child> LoadChildrenFromDB()
         {
             // open database
-            List<string> childrenList = new List<string>();
+            List<Child> childrenList = new List<Child>();
 
 
             using (var context = new CCAppEntities())
@@ -64,7 +65,7 @@ namespace CCApp.ViewModels
 
                     foreach (var c in children)
                     {
-                        childrenList.Add($"{c.ChildFirstName} {c.ChildMiddleName} {c.ChildLastName}");
+                        childrenList.Add(c);
                     }
                 }
             }
@@ -74,8 +75,10 @@ namespace CCApp.ViewModels
 
         public void ShowSelectedChild()
         {
-            _eventAggregator.PublishOnUIThread(SelectedChild);
-            ActivateItem(new ChildInfoViewModel(_eventAggregator));
+
+
+            ActivateItem(new ChildInfoViewModel(_eventAggregator, SelectedChild));
+            
         }
     }
 }

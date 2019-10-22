@@ -4,11 +4,33 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CCApp.Views"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
-    <TabControl>
+    <TabControl x:Name="Selected">
         <TabItem Header="Info" x:Name="ShowChildDemographics">
-            <ContentControl x:Name="ActiveItem"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="First Name: "/>
+                    <TextBlock x:Name="ChildFirstName"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Middle Name: "/>
+                    <TextBlock x:Name="ChildMiddleName"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Last Name: "/>
+                    <TextBlock x:Name="ChildLastName"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Birth Date: "/>
+                    <TextBlock x:Name="ChildBirthDate"/>
+                </StackPanel>
+            </StackPanel>
+            
+            
+
         </TabItem>
         <TabItem Header="Parent/Guardian"/>
         <TabItem Header="Emergency Contacts"/>

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CCApp.ViewModels
 {
-    public class ChildDemograhicsViewModel : Screen, IHandle<string>
+    public class ChildDemograhicsViewModel : Conductor<object>
     {
         private readonly IEventAggregator _eventAggregator;
 
@@ -19,24 +19,35 @@ namespace CCApp.ViewModels
         {
         }
 
-        public ChildDemograhicsViewModel(IEventAggregator eventAggregator)
+        public ChildDemograhicsViewModel(IEventAggregator eventAggregator, string childFirstname)
         {
             _eventAggregator = eventAggregator;
-            _eventAggregator.Subscribe(this);
-            ChildFirstName = "";
+            ChildFirstName = childFirstname;
 
-            // get selected child from DB
-            //using (var context = new CCAppEntities())
-            //{
 
-            //}
-            // display child Info
+            
         }
 
-
-        public void Handle(string message)
+        public void LoadChildDemographics()
         {
-            ChildFirstName = message;
+
+            //get selected child from DB
+            using (var context = new CCAppEntities())
+            {
+                var selectedChild = from c in context.Child
+                                    where c.ChildFirstName == ChildFirstName.TrimEnd()
+                                    select c;
+
+                //display child Info
+                Child child = new Child();
+                child = (Child)selectedChild;
+                ChildFirstName = child.ChildFirstName;
+            }
+
         }
+
+
+
+
     }
 }

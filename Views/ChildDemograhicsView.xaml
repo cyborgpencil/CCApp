@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
 
     <StackPanel>
+        
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="First Name:"/>
             <TextBox x:Name="ChildFirstName" Width="100" />
