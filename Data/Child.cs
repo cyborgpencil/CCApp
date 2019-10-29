@@ -19,5 +19,12 @@ namespace CCApp.Data
         public string ChildMiddleName { get; set; }
         public string ChildLastName { get; set; }
         public string ChildBirthDate { get; set; }
+        public string ChildIsActive { get; set; }
+        public string ChildGender { get; set; }
+        public string ChildAddress { get; set; }
+        public string ChildCity { get; set; }
+        public string ChildState { get; set; }
+        public Nullable<long> ChildZip { get; set; }
+        public Nullable<long> ChildPhone { get; set; }
     }
 }

@@ -14,6 +14,13 @@ namespace CCApp.ViewModels
         public string ChildMiddleName { get; set; }
         public string ChildLastName { get; set; }
         public string ChildBirthDate { get; set; }
+        public string ChildIsActive { get; set; }
+        public string ChildGender { get; set; }
+        public string ChildAddress { get; set; }
+        public string ChildCity { get; set; }
+        public string ChildState { get; set; }
+        public Nullable<long> ChildZip { get; set; }
+        public Nullable<long> ChildPhone { get; set; }
 
         public ChildCreateViewModel()
         {
@@ -32,8 +39,20 @@ namespace CCApp.ViewModels
                     context.Database.Connection.Open();
 
                     // CRUD
-                    context.Child.Add(new Child { ChildFirstName = ChildFirstName, ChildMiddleName = ChildMiddleName, ChildLastName = ChildLastName,
-                    ChildBirthDate = ChildBirthDate});
+                    context.Child.Add(new Child
+                    {
+                        ChildFirstName = this.ChildFirstName,
+                        ChildMiddleName = this.ChildMiddleName,
+                        ChildLastName = this.ChildLastName,
+                        ChildBirthDate = this.ChildBirthDate,
+                        ChildIsActive = this.ChildIsActive,
+                        ChildAddress = this.ChildAddress,
+                        ChildCity = this.ChildCity,
+                        ChildState = this.ChildState,
+                        ChildGender = this.ChildGender,
+                        ChildZip = this.ChildZip,
+                        ChildPhone = this.ChildPhone
+                    });
                     // save child to db
                     context.SaveChanges();
                     ClearChildInfo();
@@ -41,7 +60,7 @@ namespace CCApp.ViewModels
 
 
             }
-            
+
         }
 
         public bool VerifyChildInfo()
@@ -63,6 +82,7 @@ namespace CCApp.ViewModels
             ChildMiddleName = "";
             ChildLastName = "";
             ChildBirthDate = "";
-    }
+        }
+
     }
 }
